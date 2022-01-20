@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<!-- start navbar -->
+
+<nav class="nav">
+  <div class="navbar">
+    <div class="navbar-item"><a href="../index.html">خانه</a></div>
+    <div class="navbar-item">سرویس ها</div>
+    <div class="navbar-item">پیگیری سفارش</div>
+    <div class="navbar-item">ارتباط با ما</div>
+    <div class="navbar-item" id="login">ورود / ثبت نام</div>
+
+    <div class="title-logo">
+      <div class="logo"><img src="../img/logo.png" alt="logo"></div>
+      <div class="title">طراحی قالب AJM</div>
+    </div>
+  </div>
+</nav>
+
+<!-- end navbar -->
+
+<main>
+  <div class="slideshow">
+    <div class="slideshow-container">
+      <div class="slideshow-item fade "><img
+        src="../img/5e9ccde6e014f97c74a7a871_5e8668c932df03ff78aca666_shot-1-p-1080.jpeg" alt="Slide 1">
+        <div class="caption">اسلاید 1</div>
+      </div>
+      <div class="slideshow-item fade"><img
+        src="../img/5e9ccde6e014f9388ca7a873_5e8669f3d6e713e37872a50f_shot-2-p-1080.jpeg" alt="Slide 2">
+        <div class="caption">اسلاید 2</div>
+      </div>
+      <div class="slideshow-item fade"><img
+        src="../img/5e9ccde6e014f947bca7a872_5e866a1221e17d6e651c5887_shot-3-p-1080.jpeg" alt="Slide 3">
+        <div class="caption">اسلاید 3</div>
+      </div>
+      <div class="slideshow-item fade"><img
+        src="../img/5e9ccde6e014f98e6fa7a874_5e866a6adaefb4036338aa6c_shot-4-p-1080.jpeg" alt="Slide 4">
+        <div class="caption">اسلاید 4</div>
+      </div>
+
+      <img src="../img/next-page-100.png" class="prev" onclick="move_slides(-1)">
+      <img src="../img/next-page-100.png" class="next" onclick="move_slides(1)">
+
+      <div class="dots">
+        <div class="dot" onclick="current(1)"></div>
+        <div class="dot" onclick="current(2)"></div>
+        <div class="dot" onclick="current(3)"></div>
+        <div class="dot" onclick="current(4)"></div>
+      </div>
+    </div>
+    <br>
+
+
+  </div>
+
+  <div class="buy-section">
+    <div class="info-product">
+      <div class="title-product">
+        <h2>قالب شماره 1</h2>
+      </div>
+      <div class="explain-product">
+        <h3>ویژگی ها:</h3>
+        <ul class="exp-list">
+          <li class="exp-item">Lorem ipsum dolor.</li>
+          <li class="exp-item">Lorem ipsum dolor.</li>
+          <li class="exp-item">Lorem ipsum dolor.</li>
+          <li class="exp-item">Lorem ipsum dolor.</li>
+          <li class="exp-item">Lorem ipsum dolor.</li>
+        </ul>
+      </div>
+      <div class="price-product">
+        <img src="../img/shopping-cart-96.png" alt="Shop">
+        <div>قیمت:
+          <span>2000000 &nbsp;&nbsp;&nbsp;تومان</span>
+        </div>
+        <img src="../img/price-tag-64.png" alt="price">
+        <div>تخفیف:
+          <span>1800000&nbsp;&nbsp;&nbsp; تومان</span>
+        </div>
+        <button>افزودن ب سبد خرید</button>
+
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="about-sample">
+    <div class="about-tabs">
+      <button class="tabLink" onclick="openSection(event ,'tab1' )" id="default">تب 1</button>
+      <button class="tabLink" onclick="openSection(event ,'tab2' )">تب 2</button>
+      <button class="tabLink" onclick="openSection(event , 'tab3')">تب 3</button>
+    </div>
+    <div class="tab-content" id="tab1">
+      <h2>تب 1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, quas!</p>
+    </div>
+    <div class="tab-content" id="tab2">
+      <h2>تب 2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, labore.</p>
+    </div>
+    <div class="tab-content" id="tab3">
+      <h2>تب 3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, praesentium.</p>
+    </div>
+
+  </div>
+
+  <div class="similar-sample">
+
+
+  </div>
+
+</main>
+
+
+<!-- start footer -->
+
+<footer class="footer">
+  <div class="contact">
+    <div class="contact-us">
+      <div class="email">
+        <img src="../img/email-100.png" alt="email">
+        <span>
+          ایمیل:
+        </span>
+
+        <span>
+          AJM_WD@gmail.com
+        </span>
+      </div>
+      <div class="phone">
+        <img src="../img/call-90.png" alt="phone">
+        <span>
+          شماره تماس:
+        </span>
+
+        <span>
+          09190959794
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="copy-right">
+    <p>تمامی قانون کپی رایت متعلق به <span>AJM</span> میباشد</p>
+  </div>
+  <div class="social-footer">
+    <img src="../img/telegram-app-48.png" alt="telegram" class="img-footer-social">
+    <img src="../img/instagram-48.png" alt="Instagram" class="img-footer-social">
+    <img src="../img/youtube-squared-48.png" alt="YouTube" class="img-footer-social">
+    <img src="../img/twitter-squared-48.png" alt="twitter" class="img-footer-social">
+  </div>
+</footer>
+
+
+<!-- end footer -->
+
+<script src="../js/jquery-3.6.0.min.js"></script>
+<script>
+
+
+  var slideIndex = 1;
+
+  slideshow(slideIndex)
+
+  function move_slides(n) {
+    slideshow(slideIndex += n)
+  }
+
+  function current(n) {
+    slideshow(slideIndex = n)
+
+  }
+
+  function slideshow(n) {
+    var slides = document.getElementsByClassName("slideshow-item");
+    var dots = document.getElementsByClassName('dot')
+    var i;
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace("active", " ")
+    }
+
+
+    slides[slideIndex - 1].style.display = "block"
+    dots[slideIndex - 1].className += " active"
+  }
+
+  document.getElementById("default").click();
+
+  function openSection(e , tabs){
+    var i , tabLink , tabContent;
+
+    tabContent = document.getElementsByClassName("tab-content");
+    tabLink =document.getElementsByClassName("tabLink");
+
+    for (i=0 ; i<tabContent.length; i++){
+      tabContent[i].style.display = "none"
+    }
+    for (i=0 ; i<tabLink.length; i++){
+      tabLink[i].className = tabLink[i].className.replace(" active-tabs" , "")
+    }
+    document.getElementById(tabs).style.display ="block";
+    e.currentTarget.className +=" active-tabs";
+  }
+</script>
+</body>
+</html>

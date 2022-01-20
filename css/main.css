@@ -1,0 +1,1321 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: yekan, sans-serif;
+  direction: rtl;
+}
+
+
+@font-face {
+  font-family: yekan;
+  src: url("../fonts/Yekan.ttf") format("truetype");
+  src: url("../fonts/Yekan.woff") format("woff");
+}
+
+@font-face {
+  font-family: vazir;
+  src: url("../fonts/Vazir-Medium-FD.ttf") format("truetype");
+  src: url("../fonts/Vazir-Medium-FD.woff") format("woff");
+}
+
+body{
+  font-family: Yekan,sans-serif;
+}
+
+.nav {
+  display: flex;
+  height: 70px;
+  width: 100%;
+  /*background: linear-gradient(90deg, rgba(102,7,8,1) 0%, rgba(22,26,29,1) 80%););*/
+  justify-content: flex-start;
+  /*position: fixed;*/
+  background-color: #0b090a;
+
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+.navbar-item {
+  color: #fff;
+  padding: 10px;
+  opacity: 0.7;
+  /* border: 2px #000 solid; */
+  height: 50px;
+  line-height: 20px;
+  margin: 10px;
+  transition: all 0.03s ease-in;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  backface-visibility: hidden;
+  cursor: pointer;
+
+}
+
+.navbar-item:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  top: 40px;
+  left: 0;
+  background-color: white;
+  transition: all 2s;
+  margin: 0 auto;
+  display: block;
+
+}
+
+
+.navbar-item:hover {
+  opacity: 1;
+
+}
+
+.navbar-item:hover:after {
+  width: 100%;
+}
+
+
+.navbar-item:nth-of-type(5) {
+  margin-left: auto;
+}
+
+.navbar-item:nth-of-type(1) {
+  margin-right: 20px;
+}
+
+.login {
+  width: 330px;
+  height: 440px;
+  background-color: #0b090a;
+  border-radius: 16px;
+  color: white;
+  display: none;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  overflow: hidden;
+  z-index: 100;
+  margin: 0 auto;
+}
+
+#mask {
+  width: 100%;
+  height: 100%;
+  background-color: #161a1d;
+  opacity: 0.7;
+  z-index: 90;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+}
+
+
+#signup {
+  width: 100%;
+  height: 85%;
+  background-color: #0b090a;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: hidden;
+  transition: all 1s;
+  position: relative;
+}
+
+#header-signup {
+  width: 50%;
+  margin: 15px 5px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+#close {
+  position: absolute;
+  background-color: transparent;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  color: #a4161a;
+  top: 3px;
+  left: 292px;
+  padding: 2px;
+  cursor: pointer;
+  font-weight: 900;
+  opacity: 0.7;
+  transition: all 0.5s;
+  z-index: 110;
+}
+
+#signup-body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 50px 10px;
+
+}
+
+#signup-body > input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  border-bottom: 2px solid #d3d3d3;
+  height: 30px;
+  margin: 8px;
+  color: white;
+  text-align: left;
+
+}
+
+#signup-body > input::placeholder {
+  color: #d3d3d3;
+  text-align: center;
+}
+
+
+#signup-body > button {
+  width: 60%;
+  margin: 50px 10px;
+  border: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #ba181b;
+  color: white;
+
+}
+
+#login_popup {
+  width: 100%;
+  height: 15%;
+  background-color: #ba181b;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+#login-header {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  height: 15%;
+  margin-top: 15px;
+}
+
+#login-body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 50px 0;
+
+}
+
+#login-body > input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  border-bottom: 2px solid #d3d3d3;
+  height: 30px;
+  margin: 10px;
+  color: white;
+  text-align: left;
+
+}
+
+#pass-section > input::placeholder {
+  color: #d3d3d3;
+  text-align: center;
+}
+#login-body > input::placeholder {
+  color: #d3d3d3;
+  text-align: center;
+}
+
+
+#login-body > button {
+  width: 60%;
+  margin: 80px 10px 30px;
+  border: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: #0b090a;
+  color: white;
+
+}
+#pass-section{
+  background-color: transparent;
+  width: 80%;
+  border-bottom: 2px solid #d3d3d3;
+  height: 30px;
+  margin: 10px;
+}
+#pass-section >input{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 77%;
+  margin: 5px;
+  color: white;
+  text-align: left;
+}
+#pass-section >span{
+
+  cursor: pointer;
+  margin: 5px;
+  min-width: 41px;
+  text-align: center;
+}
+
+.title-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px;
+  flex-direction: row-reverse;
+  width: 20%;
+
+
+
+}
+
+.logo {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.logo > img {
+  height: 50px;
+  padding: 3px;
+
+}
+
+.title {
+  color: white;
+  font-weight: bolder;
+  padding-left: 10px;
+  transition: all 0.3s ease-in-out;
+  font-size: 14px;
+}
+
+.title:hover {
+  transform: scale(1.1);
+}
+
+.header {
+  width: 100%;
+  height: 450px;
+  /*background-color: #ba181a;*/
+  position: relative;
+  /*top: 70px;*/
+  display: flex;
+  justify-content: space-around;
+  padding-left: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-image: url("../img/header01.png");
+  background-position: center;
+  background-clip: border-box;
+  background-size: cover;
+  overflow: hidden;
+
+
+}
+
+.header-img {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  flex-basis: 100%;
+  order: 3;
+}
+
+
+.header-img > img {
+  height: 430px;
+
+
+}
+
+.description {
+  flex-basis: 50%;
+  padding: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  color: white;
+
+
+}
+
+.description > h1, .description > p {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: vazir, sans-serif;
+
+}
+
+.social-media {
+  display: block;
+  margin: 0 auto;
+  order: 1;
+
+}
+
+.social-header {
+  margin: 10px;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+.social-header:hover {
+  opacity: 1;
+}
+
+main {
+  display: flex;
+  width: 75%;
+  height: 750px;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #660708;
+  flex-direction: column;
+}
+
+
+aside {
+  display: flex;
+  width: 25%;
+  height: 750px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service {
+  display: flex;
+  width: 98%;
+  border-radius: 10px;
+  position: relative;
+  /*top: 80px;*/
+  justify-content: space-between;
+  align-items: flex-start;
+
+
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #0b090a;
+  color: white;
+  width: 24%;
+  font-family: vazir, sans-serif;
+  height: 350px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 8px 3px rgba(10,10,10,.8);
+}
+
+.service-item:hover {
+  transform: scale(1.01);
+}
+
+.service-item > img {
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+
+}
+
+.service-item > p {
+  display: block;
+  margin: 30px auto;
+  padding: 5px 10px 40px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  font-family: vazir, sans-serif;
+  font-size: 12px;
+}
+
+.service-item > button {
+  width: 90%;
+  display: block;
+  background-color: #e5383b;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+
+
+}
+
+.sidebar {
+  display: flex;
+  position: relative;
+  height: 650px;
+  background-color: #fff;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden;
+  /*top:80px;*/
+  flex-direction: column;
+
+
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #161a1d;
+  color: white;
+  height: 620px;
+}
+.about-me .cv{
+  text-align: justify;
+}
+
+.header-am {
+  height: 200px;
+}
+
+.header-am > img {
+  display: block;
+  height: 120px;
+  margin: 10px auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  transition: all 1s ease;
+  background-color: white;
+
+}
+
+.des-me {
+  text-align: center;
+}
+
+
+.sample {
+  width: 98%;
+  height: 360px;
+  margin: 10px;
+  background-color: #a4161a;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 20px;
+  flex-wrap: wrap;
+
+
+}
+
+.sample > h1 {
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.sample-item {
+  width: 16%;
+  height: 240px;
+  border-radius: 10px;
+  background-color: #d3d3d3;
+  margin: 10px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 1s;
+  cursor: pointer;
+
+}
+
+.sample-item:hover {
+  transform: rotateY(180deg);
+
+}
+
+
+.content-smp {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}
+
+.hide-content-smp {
+  position: absolute;
+  transform: rotateY(180deg);
+  background-color: #0b090a;
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.hide-content-smp > p {
+  width: 70%;
+  text-align: center;
+  font-size: 12px;
+}
+
+.hide-content-smp > button {
+  width: 92%;
+  display: block;
+  color: white;
+  background-color: transparent;
+  padding: 10px;
+  margin: 0 auto;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.hide-content-smp > button > a{
+  text-decoration: none;
+  color: white;
+}
+
+.content-smp > img {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  background-color: #0b090a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.contact {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+}
+
+.contact-us {
+  height: 50px;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+
+}
+
+.email, .phone {
+  height: 50px;
+  display: flex;
+  color: white;
+  letter-spacing: 3px;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 50%;
+}
+
+.email > span:first-of-type {
+  opacity: 0.5;
+}
+
+.phone > span:first-of-type {
+  opacity: 0.5;
+}
+
+.phone > img {
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 5px;
+  opacity: 0.5;
+}
+
+.email > img {
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+  margin: 5px;
+  opacity: 0.5;
+}
+
+.copy-right {
+  width: 30%;
+  text-align: center;
+}
+
+.copy-right > p > span {
+  color: white;
+  padding: 0 2px;
+  opacity: 0.8;
+}
+
+.social-footer {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.img-footer-social {
+  opacity: 0.5;
+  height: 40px;
+  transition: opacity 0.5s ease;
+
+}
+
+.img-footer-social:hover {
+  opacity: 1;
+}
+
+.search {
+  height: 130px;
+  background-color: #fff;
+  display: flex;
+  /* flex-grow: 1; */
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: row-reverse; */
+  border-radius: 18px;
+  border: 2px solid black;
+  box-shadow: 2px 2px 7px 1px grey;
+  margin: 10px;
+  width: 95%;
+
+}
+
+.search-bar {
+  width: 90%;
+  background-color: #cccccc;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.search-bar > img {
+  height: 36px;
+  padding: 2px;
+  margin: 2px;
+  width: 10%;
+}
+
+.search-bar > input {
+  width: 85%;
+  background-color: #cccccc;
+  height: 50px;
+  border-radius: 20px;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 1400px) {
+  main {
+    width: 100%;
+    height: 850px;
+
+  }
+
+  aside {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: space-evenly;
+    align-items: flex-start;
+    height: 300px;
+    padding: 20px;
+
+  }
+
+  .service {
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .service-item {
+    margin: 30px;
+    width: 25%;
+
+  }
+
+  .search {
+
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
+  }
+
+  .sidebar {
+    height: 270px;
+  }
+
+  .about-me {
+    flex-direction: row;
+    align-items: flex-start;
+
+  }
+
+  .header-am {
+    padding: 10px;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    height: 240px;
+
+  }
+
+  .cv {
+    width: 70%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+
+  .sample-item {
+    width: 14%;
+
+
+  }
+
+  .service-item {
+    position: relative;
+  }
+
+  .service-item > h2 {
+    width: 95%;
+    margin: 3px;
+  }
+
+  .service-item > p {
+    padding: 5px 2px 2px;
+    margin: 10px auto;
+    width: 90%;
+
+  }
+
+  .service-item > button {
+    position: absolute;
+    top: 280px;
+
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .search {
+    display: none;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 0 25px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    height: 1600px;
+  }
+
+  .service {
+
+    flex-wrap: wrap;
+  }
+
+  .service-item {
+    height: 290px;
+    width: 40%;
+
+  }
+
+  .service-item > button {
+    top: 230px;
+  }
+
+
+  .sample-item {
+    width: 30%;
+    height: 300px;
+  }
+
+  .sample {
+    height: 800px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  aside {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .footer {
+    display: flex;
+    height: 150px;
+    flex-wrap: wrap;
+
+
+  }
+
+  .contact {
+
+    width: 48%;
+
+  }
+
+  .social-footer {
+
+    width: 48%;
+
+  }
+
+  .copy-right {
+    width: 100%;
+    order: 2;
+  }
+
+
+}
+
+@media screen and (max-width: 650px) {
+  main {
+    height: 3300px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .service-item {
+    height: 290px;
+    width: 90%;
+
+  }
+
+  .sample-item {
+    width: 80%;
+    height: 300px;
+  }
+
+  .sample {
+    height: 1800px;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+  }
+
+  .header-img {
+    display: none;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+  }
+
+  .description {
+    width: 100%;
+    text-align: justify;
+    display: flex;
+
+  }
+
+  .social-media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .navbar-item {
+    padding: 2px;
+    width: 20%;
+    margin: 5px;
+  }
+
+  .navbar {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .navbar-item:nth-of-type(5) {
+    margin-left: auto;
+  }
+
+  .navbar-item:nth-of-type(1) {
+    margin-right: 2px;
+  }
+
+  .about-me {
+    height: 300px;
+  }
+
+  .cv {
+    display: none;
+  }
+
+  .header-am {
+    width: 90%;
+  }
+
+  .navbar-item:after {
+    top: 45px
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 220px;
+    align-content: center;
+  }
+
+  .contact {
+    width: 92%;
+  }
+
+  .social-footer {
+    width: 90%;
+  }
+
+  .copy-right {
+    font-size: 16px;
+    width: 94%;
+    padding: 5px;
+    order: 3;
+  }
+
+
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
